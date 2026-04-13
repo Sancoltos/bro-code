@@ -9,29 +9,24 @@ A CLI tool that lets you chat with Claude from your terminal.
 
 ## Installation
 
-Clone the repo and install:
+Clone the repo:
 
 ```
 git clone https://github.com/Sancoltos/bro-code.git
 cd bro-code
-pip install -e .
 ```
 
-## Set your API key
+Run first-time setup:
 
-**Windows:**
 ```
-setx ANTHROPIC_API_KEY "your-key-here"
+python setup.py first_setup
 ```
-Then restart your terminal.
 
-**Mac/Linux:**
-```
-export ANTHROPIC_API_KEY="your-key-here"
-```
-To make it permanent, add that line to your `~/.bashrc` or `~/.zshrc`.
+This will install dependencies, fix your PATH on Windows, and walk you through saving your API key.
 
 ## Run
+
+Open a new terminal, then:
 
 ```
 bro
@@ -40,3 +35,9 @@ bro
 Type your question or task and press Enter. When Claude wants to read, write, or run something on your machine it will ask for your approval before doing anything.
 
 Type `exit` or `quit` to stop.
+
+## Update your API key later
+
+```
+python setup.py configure_anthropic
+```
